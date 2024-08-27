@@ -1,15 +1,17 @@
-# name: CI
-#
-# on:
-# <trigger>:
-#
-# jobs:
-#   build:
-#     name: Build
-#     runs-on: ubuntu-latest
-#
-#     steps:
-#
-#       - <checkout repository>
-#
-#       - <build step>
+name: CI # Name of the workflow
+on:
+  pull_request: #Runs when pull request is created or updated
+jobs:
+  build:
+    name: Build # Name of your job
+    runs-on: ubuntu-latest # What OS to run on, usually windows-latest or ubuntu-latest
+
+    steps:
+      - name: Checkout code #When the github action starts its an empty container, so to interact with your codebase you need to checkout the repo first
+        uses: actions/checkout@v2
+
+      - name: Build # This step will install npm dependencies and build the project
+        shell: bash
+        run: |
+          npm install
+          npm run build
