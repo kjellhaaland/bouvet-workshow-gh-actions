@@ -1,5 +1,4 @@
-![GitHub followers](https://img.shields.io/github/followers/:user)
-
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/kjellhaaland/bouvet-workshow-gh-actions/ci.yml?label=Build)
 
 # CI/CD workshop using Github actions
 
