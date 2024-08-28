@@ -24,12 +24,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build Page
-        env:
-          VITE_commitId: ${{ github.sha }}
         run: |
           npm install
           npm run build
-
+        env:
+          VITE_commitId: ${{ github.sha }}
+          
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
